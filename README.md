@@ -250,6 +250,5 @@ Things the live site taught us (all encoded in `selectors.py` and tested):
 - Only **macOS** was exercised live, with a personal account. Other platforms and account types are
   untested.
 - Spotify offers no all-shows page, so `shows` cannot promise to find every show; pass `--show-id`.
-- Not yet on PyPI under any name; the install commands above apply once it is released.
 - Spotify can change or restrict automated access at any time; this project cannot promise that an
   upload will keep working.
