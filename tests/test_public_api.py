@@ -11,9 +11,12 @@ REQUIRED_NAMES = {
     "AuthExpiredError",
     "ConfigurationError",
     "EpisodeRequest",
+    "LoginResult",
+    "MediaInfo",
     "ProgressCallback",
     "PublishStatus",
     "PublishedEpisode",
+    "SessionSummary",
     "ShowInfo",
     "ShowSetupError",
     "SpotifyCreatorsUploader",
@@ -21,6 +24,12 @@ REQUIRED_NAMES = {
     "UploaderConfig",
     "UploaderError",
     "ValidationError",
+    "interactive_login",
+    "load_storage_state",
+    "prepare_for_spotify",
+    "probe_media",
+    "spec_issues",
+    "summarize",
 }
 
 

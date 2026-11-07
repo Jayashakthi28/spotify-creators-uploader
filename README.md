@@ -157,6 +157,10 @@ async def main() -> None:
 asyncio.run(main())
 ```
 
+`UploaderConfig(home=...)` points the library at its own state directory, so an application can keep
+its session apart from the CLI's. `interactive_login`, `load_storage_state`/`summarize` and
+`probe_media`/`spec_issues`/`prepare_for_spotify` are exported for the same reason.
+
 `UploaderConfig.load()` also reads `$SPOTIFY_SHOW_ID` and the stored show id. `publish()` accepts
 `dry_run`, `force`, `resume_episode_id` and `on_progress`, and returns a `PublishedEpisode`. The
 package ships type information (`py.typed`); the public names are listed in

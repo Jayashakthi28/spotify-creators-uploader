@@ -11,12 +11,15 @@ from spotify_uploader.errors import (
     UploadError,
     ValidationError,
 )
+from spotify_uploader.login import LoginResult, interactive_login
 from spotify_uploader.models import (
     EpisodeRequest,
     ProgressCallback,
     PublishedEpisode,
     PublishStatus,
 )
+from spotify_uploader.prepare import MediaInfo, prepare_for_spotify, probe_media, spec_issues
+from spotify_uploader.session import SessionSummary, load_storage_state, summarize
 from spotify_uploader.shows import ShowInfo
 from spotify_uploader.uploader import SpotifyCreatorsUploader
 
@@ -30,9 +33,12 @@ __all__ = [
     "AuthExpiredError",
     "ConfigurationError",
     "EpisodeRequest",
+    "LoginResult",
+    "MediaInfo",
     "ProgressCallback",
     "PublishStatus",
     "PublishedEpisode",
+    "SessionSummary",
     "ShowInfo",
     "ShowSetupError",
     "SpotifyCreatorsUploader",
@@ -41,4 +47,10 @@ __all__ = [
     "UploaderError",
     "ValidationError",
     "__version__",
+    "interactive_login",
+    "load_storage_state",
+    "prepare_for_spotify",
+    "probe_media",
+    "spec_issues",
+    "summarize",
 ]

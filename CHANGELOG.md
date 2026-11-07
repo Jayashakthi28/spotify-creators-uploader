@@ -12,6 +12,10 @@ Initial public release.
 
 ### Added
 
+- The library also exports `interactive_login`, session status helpers
+  (`load_storage_state`, `summarize`) and the video helpers (`probe_media`,
+  `spec_issues`, `prepare_for_spotify`), so a host application can run the whole
+  flow without shelling out to the CLI.
 - `spotify-uploader` command-line tool and importable `spotify_uploader`
   library for publishing video podcast episodes to Spotify for Creators
   through a saved headless Playwright session.
