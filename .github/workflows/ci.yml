@@ -1,0 +1,40 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: ${{ matrix.os }} / Python ${{ matrix.python }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - {os: ubuntu-latest, python: "3.11"}
+          - {os: ubuntu-latest, python: "3.13"}
+          - {os: macos-latest, python: "3.13"}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install the package and its dev tools
+        run: |
+          python -m pip install --upgrade pip uv
+          uv venv --python "${{ matrix.python }}" .venv
+          uv pip install --python .venv/bin/python -e ".[dev]"
+      - name: Install Chromium for the browser tests
+        run: |
+          if [ "$RUNNER_OS" = "Linux" ]; then
+            .venv/bin/python -m playwright install --with-deps chromium
+          else
+            .venv/bin/python -m playwright install chromium
+          fi
+      - name: Lint, type-check and test
+        run: make check

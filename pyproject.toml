@@ -45,6 +45,12 @@ dev = [
     "mypy>=1.10",
 ]
 
+[project.urls]
+Homepage = "https://github.com/Jayashakthi28/spotify-creators-uploader"
+Repository = "https://github.com/Jayashakthi28/spotify-creators-uploader"
+Issues = "https://github.com/Jayashakthi28/spotify-creators-uploader/issues"
+Changelog = "https://github.com/Jayashakthi28/spotify-creators-uploader/blob/main/CHANGELOG.md"
+
 [project.scripts]
 spotify-uploader = "spotify_uploader.cli:main"
 
